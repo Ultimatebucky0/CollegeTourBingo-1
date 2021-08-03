@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.view.View;
 
@@ -16,7 +17,8 @@ public class BingoBox extends AppCompatTextView {
     public BingoBox(Context context) {
         super(context);
         setOnClickListener(new BingoBoxClickListener());
-        setBackgroundColor(Color.LTGRAY);
+//        setBackgroundColor(Color.LTGRAY);
+        setBackgroundResource(R.drawable.bingo_box_rounded);
 
     }
 
@@ -46,20 +48,18 @@ public class BingoBox extends AppCompatTextView {
 
     public void setMarked(boolean marked) {
         this.marked = marked;
-//        ColorInt public static final int DKGREEN = 0XFF00AB08;
         if(marked) {
             setBackgroundColor(0XFF00AB08);
             setTextColor(Color.BLACK);
         } else {
-            setBackgroundColor(Color.BLACK);
-            setTextColor(Color.WHITE);
-//            setTextColor(getResources().getColor(R.color.colorPrimary, getContext().getTheme()));
+            setBackgroundColor(Color.WHITE);
+            setTextColor(Color.BLACK);
         }
     }
 
     public void setPartOfBingo(boolean bingo) {
         if(bingo) {
-            setBackgroundColor(Color.RED);
+            setBackgroundColor(Color.BLUE);
             setTextColor(Color.WHITE);
         } else {
             setMarked(marked);

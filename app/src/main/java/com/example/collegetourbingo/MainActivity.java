@@ -2,6 +2,7 @@ package com.example.collegetourbingo;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,7 +10,9 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 
 import androidx.room.Room;
 
@@ -53,9 +56,12 @@ public class MainActivity extends AppCompatActivity {
         instance = this;
     }
 
+    ImageView imageView1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         // The number of bingo terms is held in a string so only one file needs to be changed when adding terms
         numBingoTerms = Integer.parseInt(getString(R.string.num_bingo_terms));
         for(int i = 0; i < numBingoTerms; i++) {
@@ -81,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 BingoBox bingobox = new BingoBox(this);
 
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams(row, column);
-                params.width = size.x / BINGO_WIDTH - 2;
+                params.width = size.x / BINGO_WIDTH - 7;
                 params.height = size.x / BINGO_WIDTH - 2;
                 params.setMargins(0,2,2,0);
 //                params.setMargins(border-radius: 15px);
