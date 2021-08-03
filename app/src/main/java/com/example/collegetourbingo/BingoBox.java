@@ -5,8 +5,10 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.support.annotation.LayoutRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import static android.content.Context.VIBRATOR_SERVICE;
@@ -19,6 +21,7 @@ public class BingoBox extends AppCompatTextView {
         setOnClickListener(new BingoBoxClickListener());
 //        setBackgroundColor(Color.LTGRAY);
         setBackgroundResource(R.drawable.bingo_box_rounded);
+
 
     }
 
