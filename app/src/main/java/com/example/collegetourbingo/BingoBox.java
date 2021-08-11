@@ -19,7 +19,6 @@ public class BingoBox extends AppCompatTextView {
     public BingoBox(Context context) {
         super(context);
         setOnClickListener(new BingoBoxClickListener());
-//        setBackgroundColor(Color.LTGRAY);
         setBackgroundResource(R.drawable.bingo_box_rounded);
 
 

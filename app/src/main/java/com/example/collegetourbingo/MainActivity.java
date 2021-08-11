@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 BingoBox bingobox = new BingoBox(this);
 
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams(row, column);
+
                 params.width = size.x / BINGO_WIDTH - 7;
                 params.height = size.x / BINGO_WIDTH - 2;
                 params.setMargins(0,2,2,0);
@@ -111,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
         bingoDisplay = menu.findItem(R.id.bingos);
         if(bingos > 0) {
             bingoDisplay.setTitle(getString(R.string.bingo) + ((bingos == 1) ? "" : " x" + bingos));
+
         } else {
             bingoDisplay.setTitle("");
         }
@@ -211,6 +213,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
                         Intent intent = new Intent(instance, CollegeSelectActivity.class);
+
+                        setContentView(R.layout.activity_main);
 
                         startActivity(intent);
                         break;

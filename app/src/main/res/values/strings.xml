@@ -32,7 +32,7 @@
     <string name="bingo_term_13">Judge you in the context of your high school</string>
     <string name="bingo_term_14">Makerspace</string>
     <string name="bingo_term_15">Tell me if I\'m going to walk into anything</string>
-    <string name="bingo_term_16">Net price calculator on our website</string>
+    <string name="bingo_term_16">Best fit</string>
     <string name="bingo_term_17">How far has everyone traveled</string>
     <string name="bingo_term_18">Undergraduate Research Opportunities</string>
     <string name="bingo_term_19">Study Abroad</string>
@@ -62,5 +62,8 @@
     <string name="bingo_term_43">Library floors get quieter as you go up</string>
     <string name="bingo_term_44">Start your own club</string>
 	<string name="bingo_term_45">No typical student</string>
-	<string name="bingo_term_46">Best fit</string>
+    <string name="bingo_term_46">Best of both worlds</string>
+    <string name="bingo_term_47">Job placement rate</string>
+
+
 </resources>
