@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     public int numBingoTerms;
     public List<String> allTerms = new ArrayList<>();
+    public List<String> free = new ArrayList<>();
+
 
     private String college = "";
 
@@ -96,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 //                }
                 bingobox.setLayoutParams(params);
                 bingobox.setGravity(Gravity.CENTER_HORIZONTAL);
-//
+
                 bingoBoard[i][j] = bingobox;
                 ((GridLayout)findViewById(R.id.bingolayout)).addView(bingobox, params);
             }
@@ -194,15 +196,47 @@ public class MainActivity extends AppCompatActivity {
         List<String> remainingTerms = new ArrayList<>(allTerms);
 
         // Unmark the squares and rerandomize the text
-        for(BingoBox[] row : bingoBoard) {
-            for(BingoBox b : row) {
-                b.setMarked(false);
+        for(int i = 0; i < BINGO_WIDTH; i++) {
+            for(int j = 0; j < BINGO_WIDTH; j++) {
+                BingoBox bingobox = new BingoBox(this);
+                bingobox.setMarked(false);
+
                 String term = remainingTerms.get(rand.nextInt(remainingTerms.size()));
                 // If we don't have enough terms to fill the board without duplicates, then allow for duplicates
                 if(numBingoTerms >= BINGO_WIDTH * BINGO_HEIGHT)
                     remainingTerms.remove(term);
 
-                b.setText(term);
+                // https://stackoverflow.com/a/10348166
+                Point size = new Point();
+                getWindowManager().getDefaultDisplay().getSize(size);
+
+                GridLayout.Spec row1 = GridLayout.spec(i);
+                GridLayout.Spec column1 = GridLayout.spec(j);
+
+                GridLayout.LayoutParams params = new GridLayout.LayoutParams(row1, column1);
+
+                params.width = size.x / BINGO_WIDTH - 7;
+                params.height = size.x / BINGO_WIDTH - 2;
+                params.setMargins(0,2,2,0);
+
+                bingobox.setLayoutParams(params);
+                bingobox.setGravity(Gravity.CENTER_HORIZONTAL);
+                bingobox.setBackgroundResource(R.drawable.bingo_box_rounded);
+
+                bingoBoard[i][j] = bingobox;
+                ((GridLayout)findViewById(R.id.bingolayout)).addView(bingobox, params);
+
+                if (i==2 && j==2) {
+                    free.add(getString(getResources().getIdentifier("free", "string", getPackageName())));
+                    String freeTerm = free.get(rand.nextInt(free.size()));
+
+                    bingobox.setMarked(false);
+                    bingobox.setBackgroundResource(R.drawable.bingo_box_rounded);
+                    bingobox.setText(freeTerm);
+
+
+                } else {bingobox.setText(term);}
+
             }
         }
 
@@ -318,4 +352,6 @@ public class MainActivity extends AppCompatActivity {
         college = c.toString();
         getSupportActionBar().setSubtitle(c);
     }
+
+
 }
