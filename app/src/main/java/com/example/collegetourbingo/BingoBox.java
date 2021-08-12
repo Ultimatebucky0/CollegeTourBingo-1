@@ -54,7 +54,7 @@ public class BingoBox extends AppCompatTextView {
             setBackgroundColor(0XFF00AB08);
             setTextColor(Color.BLACK);
         } else {
-            setBackgroundColor(Color.WHITE);
+            setBackgroundColor(Color.TRANSPARENT);
             setTextColor(Color.BLACK);
         }
     }
