@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                                 case DialogInterface.BUTTON_POSITIVE:
                                     newGame();
                                     updateBingos();
+
                                     break;
 
                                 case DialogInterface.BUTTON_NEGATIVE:

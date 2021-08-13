@@ -17,7 +17,8 @@
 
     <string name="free">FREE</string>
     <string name="num_bingo_terms">45</string>
-    <string name="bingo_term_0">Holistic Review</string>
+    <string name="bingo_term_0">Holistic</string>
+    <string name="bingo_term_0_desc">uses word "holistic"</string>
     <string name="bingo_term_1">Blue Light System</string>
     <string name="bingo_term_2">So easy to get into research</string>
     <string name="bingo_term_3">Interdisciplinary</string>

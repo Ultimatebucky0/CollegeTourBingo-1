@@ -19,6 +19,7 @@ public class BingoBox extends AppCompatTextView {
     public BingoBox(Context context) {
         super(context);
         setOnClickListener(new BingoBoxClickListener());
+
         setBackgroundResource(R.drawable.bingo_box_rounded);
 
 
@@ -50,18 +51,18 @@ public class BingoBox extends AppCompatTextView {
 
     public void setMarked(boolean marked) {
         this.marked = marked;
-        if(marked) {
-            setBackgroundColor(0XFF00AB08);
+        if (marked) {
+            setBackgroundResource(R.drawable.bingo_box_rounded_marked);
             setTextColor(Color.BLACK);
         } else {
-            setBackgroundColor(Color.TRANSPARENT);
+            setBackgroundResource(R.drawable.bingo_box_rounded);
             setTextColor(Color.BLACK);
         }
     }
 
     public void setPartOfBingo(boolean bingo) {
         if(bingo) {
-            setBackgroundColor(Color.BLUE);
+            setBackgroundResource(R.drawable.bingo_box_rounded_bingo);
             setTextColor(Color.WHITE);
         } else {
             setMarked(marked);
